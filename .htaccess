@@ -70,7 +70,7 @@
 	# Hide some files which should not show up in the listing.
 	# You can also add your own entries, but remember this setting
 	# will be inherited by all subfolders (as all of these settings)
-	IndexIgnore     robots.txt swtndx favicon.ico
+	IndexIgnore     robots.txt swtndx favicon.ico Gruntfile.js package.json node_modules
 
 	# Icons
 	# Replace /swtndx/icons/ with /swtndx/icons_fugue/ and adjust +IconHeight and +IconWidth
