@@ -42,12 +42,12 @@ module.exports = function(grunt){
         // rsync stuff around
         rsync: {
             options: {
-                recursive: true
+                recursive: true,
+                exclude: ['.git*','node_modules', 'Gruntfile.js', 'package.json', 'README.md']
             },
             // deployment
             deploy: {
                 options: {
-                    syncDest: true,
                     src: '.',
                     dest: 'domains/files.kremalicious.com/html',
                     host: 'kremalicious',

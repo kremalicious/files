@@ -25,8 +25,8 @@
 	## Uberspace
 	#AddHandler php-fcgid .uihtml
 	#
-	AddHandler application/x-httpd-php .uihtml
-	#AddHandler php-stable .uihtml
+	#AddHandler application/x-httpd-php .uihtml
+	AddHandler php-stable .uihtml
 
 	# Configure Indexing
 	# These are many settings, learn more about them here:
