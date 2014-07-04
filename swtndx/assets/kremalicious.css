@@ -1,0 +1,154 @@
+html,
+body {
+  background: #e7eef4;
+  color: #61737c;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+body,
+table {
+  font: 14px/22px 'Avenir Next', 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+}
+body {
+  padding: 24px;
+}
+a {
+  color: #41a296;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+a:hover,
+a:focus {
+  color: #5abdb0;
+}
+ol strong {
+  font-weight: normal;
+}
+table {
+  border-collapse: separate;
+  margin: 0;
+}
+table th {
+  display: none;
+}
+table td {
+  border-bottom: 1px solid #d6e2ec;
+  vertical-align: middle;
+}
+table td:first-child {
+  width: 2%;
+}
+table td:nth-child(2) {
+  width: 98%;
+}
+table tr:last-child td {
+  border: none;
+}
+table a {
+  display: block;
+  padding: 5px;
+  vertical-align: middle;
+}
+table img {
+  display: block;
+  vertical-align: middle;
+  margin: -7px 0 -5px 0;
+}
+.breadcrumb {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+.breadcrumb li.root {
+  background: url('krlcus-cloud32.png') no-repeat left top;
+  min-height: 32px;
+  padding-left: 42px;
+  padding-top: 10px;
+  display: block;
+}
+footer,
+footer a {
+  border: none;
+  color: #96a6ad;
+}
+footer p {
+  margin-top: 30px;
+  padding-top: 5px;
+}
+footer small {
+  font-size: 11px;
+}
+/* ============================================================== */
+/*   Media Queries for Responsive Design */
+/*  ============================================================== */
+@media only screen and (max-width: 480px) {
+  body {
+    padding: 6px;
+  }
+  table {
+    max-width: 100%;
+    table-layout: auto;
+  }
+  table th,
+  table td {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  table td[align=right] {
+    font-size: .7em;
+  }
+}
+@media only screen and (max-width: 768px) {
+  td[align=right] {
+    font-size: .8em;
+  }
+}
+@media screen and (max-width: 640px) {
+  body {
+    padding: 12px;
+  }
+  table {
+    border-top: 0;
+  }
+  table,
+  table tbody,
+  table tr,
+  table td,
+  table a {
+    position: relative;
+    display: block;
+    width: auto !important;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+  table td {
+    border: 0;
+  }
+  table td:first-child {
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    left: 10px;
+    height: 24px;
+    z-index: 1;
+    -webkit-user-select: none;
+    -webkit-pointer-events: none;
+    pointer-events: none;
+  }
+  table td:nth-child(2) a {
+    border-bottom: 1px solid #d6e2ec;
+    padding: 20px 6em 20px 44px;
+    word-wrap: break-word;
+  }
+  table img {
+    margin: 0;
+    margin-top: 2px;
+  }
+}
+@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi)  {
+  .breadcrumb li.root {
+    background-image: url('krlcus-cloud32@2x.png');
+    background-size: 32px 32px;
+  }
+}

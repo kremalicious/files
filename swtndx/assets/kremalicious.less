@@ -1,0 +1,206 @@
+
+//
+// Variables
+//
+@brand-dark:        #015565;
+@brand-light:       #e7eef4;
+@brand-cyan:        #3a9085;
+@brand-grey:        #56666e;
+@brand-grey-light:	#96a6ad;
+
+@background:        @brand-light;
+
+@text-color:		lighten(@brand-grey, 5%);
+@link-color:        lighten(@brand-cyan, 5%);
+@link-color-hover:  lighten(@link-color, 10%);
+
+@border-color:      darken(@brand-light, 5%);
+
+// Usage: @media @highDPI { }
+@highDPI:           ~"print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) ";
+
+//
+// Mixins
+//
+.transition(@transition: all .2s ease-in-out 0s) {
+  -webkit-transition: @transition;
+          transition: @transition;
+}
+
+
+//
+// Let's roll
+//
+html, body {
+	background: @background;
+	color: @text-color;
+	text-shadow: 0 1px 0 rgba(255,255,255,.4)
+}
+
+body,
+table {
+	font: 14px/22px 'Avenir Next', 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+}
+
+body {
+	padding: 24px;
+}
+
+a {
+	color: @link-color;
+    text-decoration: none;
+	.transition(all .2s ease-in-out 0s);
+
+    &:hover,
+    &:focus {
+    	color: @link-color-hover;
+    }
+}
+
+strong { font-weight: normal; }
+
+table {
+	border-collapse: separate;
+	margin: 0;
+
+    // hide table header
+    th { display: none }
+
+    td {
+    	border-bottom: 1px solid @border-color;
+        vertical-align: middle;
+
+        &:first-child { width: 2% }
+        &:nth-child(2) { width: 98% }
+    }
+
+    tr:last-child td {
+        border: none
+    }
+
+    a {
+    	display: block;
+    	padding: 5px;
+    	vertical-align: middle;
+    }
+
+    img {
+    	display: block;
+    	vertical-align: middle;
+    	margin: -7px 0 -5px 0;
+    }
+}
+
+.breadcrumb {
+	background: none;
+	box-shadow: none;
+	padding: 0;
+
+    li.root {
+    	background: url('krlcus-cloud32.png') no-repeat left top;
+    	min-height: 32px;
+    	padding-left: 42px;
+    	padding-top: 10px;
+    	display: block;
+    }
+}
+
+footer {
+    &,
+    a {
+    	border: none;
+    	color: @brand-grey-light;
+    }
+    p {
+        margin-top: 30px;
+        padding-top: 5px;
+    }
+    small { font-size: 11px }
+}
+
+/* ============================================================== */
+/*   Media Queries for Responsive Design */
+/*  ============================================================== */
+
+@media only screen and (max-width: 480px) {
+
+	body { padding: 6px; }
+
+	table {
+		max-width: 100%;
+		table-layout: auto;
+
+        th, td {
+    		padding-left: 2px;
+    		padding-right: 2px;
+        }
+
+    	td[align=right] { font-size: .7em; }
+	}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+	td[align=right] { font-size: .8em; }
+
+}
+
+@media screen and (max-width: 640px){
+
+	body { padding: 12px;	}
+
+    table {
+        &,
+        tbody,
+        tr,
+        td,
+        a {
+    		position: relative;
+    		display: block;
+    		width: auto !important;
+    		margin: 0;
+    		padding: 0;
+    		background-color: transparent;
+        }
+
+        & { border-top: 0; }
+
+        td {
+            border: 0;
+
+            &:first-child{
+        		position: absolute;
+        		top: 50%;
+                margin-top: -12px;
+        		left: 10px;
+        		height: 24px;
+        		z-index: 1;
+        		-webkit-user-select: none;
+        		-webkit-pointer-events: none;
+        		pointer-events: none;
+        	}
+
+            &:nth-child(2) a {
+        		border-bottom: 1px solid @border-color;
+        		padding: 20px 6em 20px 44px;
+        		word-wrap: break-word;
+            }
+        }
+
+        img {
+            margin: 0;
+            margin-top: 2px
+        }
+    }
+
+}
+
+@media @highDPI {
+
+	.breadcrumb li.root {
+		background-image: url('krlcus-cloud32@2x.png');
+		background-size: 32px 32px;
+	}
+
+}
